@@ -1,0 +1,35 @@
+% \documentclass{beamer}
+\documentclass[xetex,mathserif,serif]{beamer}
+
+
+%------------------------
+% xelatex
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+% languages
+\usepackage{fixlatvian}
+\usepackage{polyglossia}
+\setdefaultlanguage{latvian}
+%\setotherlanguages{english,russian}
+
+
+%pseidokodam
+\usepackage[boxed,linesnumbered]{algorithm2e}
+\SetAlgorithmName{Algoritms}{}{Algoritmu saraksts}
+
+\usepackage{float}
+
+\begin{document}
+  \begin{frame}
+    \frametitle{This is the first slide}
+    %Content goes here
+  \end{frame}
+  \begin{frame}
+    \frametitle{This is the second slide}
+    \framesubtitle{A bit more information about this}
+    %More content goes here
+  \end{frame}
+% etc
+\end{document}

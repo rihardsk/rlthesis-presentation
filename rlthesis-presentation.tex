@@ -1,6 +1,6 @@
 % \documentclass{beamer}
-\documentclass[xetex,mathserif,sans serif]{beamer}
-
+\documentclass[xetex]{beamer}
+% \documentclass[xetex,mathserif,sans serif]{beamer}
 
 %------------------------
 % xelatex
@@ -24,18 +24,54 @@
 
 \title{Paredzošā stimulētā mācīšanās}
 \author{Rihards Krišlauks \newline \small{darba vadītājs: Asoc.prof., Dr. dat. Jānis Zuters}}
-\date{Rīga, 2016}
+\date{Rīga 2016}
 \titlegraphic{\includegraphics[width=3cm]{lu-logo-full.png}}
 
 \begin{document}
-  \maketitle
+  % \maketitle
+  \frame{\titlepage}
   \begin{frame}
-    \frametitle{This is the first slide}
+    \frametitle{Ievads un mērķi}
     %Content goes here
+    \begin{itemize} 
+    \item Neirozinātnē -- paredzošā kodēšana vēsta, ka smadzenes cenšas
+      paredzēt ienākošos sensoru signālus no iepriekš novērotā, minimizējot
+      paredzēšānas kļūdu.
+    \item Datorzinātnē -- stimulētā mācīšanās ļauj vispārīgi skatīties uz
+      uzdevumiem, kur aģentam jāmācās, mijiedarbojoties ar vidi. 
+    \item Actor-critic algoritmi šķiet labi piemēroti no paredzošās kodēšanas
+      aizgūtu ideju realizēšanai.
+    \end{itemize}
+    \vspace{0.5cm}
+    Mērķi
+    \begin{itemize} 
+    \item Izveidot stimulētās mācīšanās algoritmu, kas veido iekšēju vides
+      modeli, lai paredzētu dažādus vides aspektus.
+    \item Eksperimentāli noteikt, vai tas paātrina mācīšanos.
+    \end{itemize}
   \end{frame}
+
+
   \begin{frame}
-    \frametitle{This is the second slide}
-    \framesubtitle{A bit more information about this}
+    \frametitle{Stimulētā mācīšanās}
+    \framesubtitle{Īss ieskats}
+    \begin{itemize}
+      \item Aģents mijiedarbojas ar vidi. Veicot darbību $a_t$, nonāk vides
+        stāvoklī $s_{t+1}$ un saņem atalgojumu $r_{t+1}$.
+    \end{itemize}
+    % \vspace{0.5cm}
+    \begin{center}
+      \includegraphics[height=3cm]{rl.pdf}
+    \end{center}
+    \begin{itemize}
+      \item Mērķis ir izstrādāt stratēģiju $\pi$, lai maksimizēt saņemto atalgojumu
+    \end{itemize}
+    \[
+      E\left[\sum_{t=0}^{\infty}\gamma^t r_t\right],
+    \]
+    kur $r_t$ tiek iegūts aģentam vadoties pēc stratēģijas $\pi$ un $\gamma \in
+    \left[0; 1\right)$ ir atlaides koeficients.
+    
     %More content goes here
   \end{frame}
 % etc

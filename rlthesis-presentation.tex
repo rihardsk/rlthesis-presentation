@@ -1,5 +1,5 @@
 % \documentclass{beamer}
-\documentclass[xetex]{beamer}
+\documentclass[xetex,mathserif]{beamer}
 % \documentclass[xetex,mathserif,sans serif]{beamer}
 
 %------------------------
@@ -15,6 +15,8 @@
 %\setotherlanguages{english,russian}
 
 \graphicspath{{figures/}} % Location of the graphics files
+
+% \renewcommand{\labelitemii}{$\star$}
 
 %pseidokodam
 \usepackage[boxed,linesnumbered]{algorithm2e}
@@ -57,7 +59,7 @@
     \framesubtitle{Īss ieskats}
     \begin{itemize}
       \item Aģents mijiedarbojas ar vidi. Veicot darbību $a_t$, nonāk vides
-        stāvoklī $s_{t+1}$ un saņem atalgojumu $r_{t+1}$.
+        stāvoklī $s_{t+1}$ un saņem atalgojumu $r_{t}$.
     \end{itemize}
     % \vspace{0.5cm}
     \begin{center}
@@ -74,5 +76,65 @@
     
     %More content goes here
   \end{frame}
+  
+  
+  \begin{frame}
+    \frametitle{Stimulētā mācīšanās}
+    \framesubtitle{Risināšanas paņēmieni}
+    \begin{itemize}
+      \item Modeļa aproksimācijā mēģina tuvināti iegūt vides dinamikas parametrus.
+      \item Vērtību aproksimācijā mēģina tuvināti iegūt stāvokļu vērtību funkciju.
+      \item Stratēģijas aproksimācijā mēģina tiešā veidā nonākt pie optimālās
+        stratēģijas.
+    \end{itemize}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{CACLA algoritms}
+    \begin{itemize}
+      \item Pieder pie stratēģijas aproksimācijas algoritmiem, konktētāk, pie
+        \textit{actor-critic} algoritmiem.
+      \item Satur \textbf{kritiķa} komponenti, kas aproksimē stāvokļu vērtības
+        funkciju, un \textbf{aktiera} komponenti, kas aproksimē optimālo stratēģiju.
+      \item Abām komponentēm mijiedarbojoties, algoritms mācās.
+        \begin{itemize}
+          \item Stāvokļa vērtības pieaugums nosaka stratēģijas izmaiņas.
+          \item Stratēģijas izmaiņas noved pie izmaiņām stāvokļu vērtībās.
+        \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{CACLA algoritms}
+    \framesubtitle{Pseidokods}
+    \begin{itemize}
+      \item Veic darbību atbilstoši esošajai stratēģijai
+        \begin{equation*}
+          a_t = \mathcal{N}\left(Ac_t(s_t), 0.05\right)
+        \end{equation*}
+      \item Novēro nākamo stāvokli $s_{t+1}$ un iegūto atlagojumu $r_{t}$
+      \item Pielāgo stāvokļu vērtību funkciju
+        \begin{itemize}
+          \item Ja $s_{t+1}$ nav gala stāvoklis
+            \begin{equation*}
+              V_{t+1}(s_t) \xleftarrow{\alpha} r_t + \gamma V_t(s_{t + 1})
+            \end{equation*}
+          \item Ja $s_{t+1}$ ir gala stāvoklis
+            \begin{equation*}
+              V_{t+1}(s_t) \xleftarrow{\alpha} r_t
+            \end{equation*}
+        \end{itemize}
+      \item Ja darbības rezultātā stāvokļa vērtība ir pieaugusi~--~$V_{t+1}(s_t)
+        > V_t(s_t)$
+        \begin{itemize}
+          \item Pielāgo stratēģijas funkciju
+            \begin{equation*}
+              Ac_{t+1}(s_t) \xleftarrow{\beta_t(s_t)} a_t
+            \end{equation*}
+        \end{itemize}
+    \end{itemize}
+  \end{frame}
+
 % etc
 \end{document}

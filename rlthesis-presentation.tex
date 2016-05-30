@@ -136,5 +136,69 @@
     \end{itemize}
   \end{frame}
 
+  \begin{frame}
+    \frametitle{CCACLA algoritmi}
+    \framesubtitle{CCACLA pamatalgoritms}
+    \begin{itemize}
+      \item CCACLA algoritms apvieno aktiera un kritiķa komponenti vienā neironu
+        tīklā.
+      \item Vērtību funkcijas (kritiķa) un stratēģijas (aktiera) pielāgošanas
+        nosacījumi saglabājas nemainīgi.
+    \end{itemize}
+    \begin{center}
+      \hspace{2cm} \includegraphics[height=5cm]{ccacla-basic.pdf}
+    \end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{CCACLA algoritmi}
+    \framesubtitle{CCACLA ar stāvokļa paredzēšanu un CCACLA ar paredzēšanu nākotnē}
+    \begin{itemize}
+      \item CCACLA ar stāvokļa paredzēšanu cenšas uzminēt arī nākamo stāvokli.
+      \item CCACLA ar paredzēšanu nākotnē paredz nākamo stāvokli un tā vērtību.
+        % $V_t(s_{t-2}) \xleftarrow{\alpha} r_{t-1} + \gamma v_t$
+    \end{itemize}
+    \begin{center}
+      \hspace{2cm} \includegraphics[height=6cm]{ccacla-state.pdf}
+    \end{center}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Eksperimenti}
+    \framesubtitle{Izmantotās vides}
+    \begin{columns}[C]
+    \begin{column}[C]{5cm}
+      \begin{itemize}
+        \item Cart-pole -- nepārtraukta stāvokļu telpa, nepārtraukta darbību telpa
+        \item Acrobot -- nepārtraukta stāvokļu telpa, diskrēta darbību telpa
+        \item Mountain car -- nepārtraukta stāvokļu telpa, diskrēta darbību telpa
+      \end{itemize}
+
+    \end{column}
+    \begin{column}[C]{5cm}
+      \includegraphics[height=2cm]{pole.png}
+
+      \vspace{1cm}
+      \includegraphics[height=2cm]{acrobot.png}
+
+      \vspace{0.7cm}
+      \includegraphics[height=2cm]{car.png}
+    \end{column}
+    \end{columns}
+      \tiny{Attēli ņemti no http://library.rl-community.org/}
+  \end{frame}
+
+  % \begin{frame}
+  %   \frametitle{Eksperimenti}
+  %   \framesubtitle{Cart-pole rezultāti}
+  %   \begin{itemize}
+  %     \item CCACLA ar stāvokļa paredzēšanu cenšas uzminēt arī nākamo stāvokli.
+  %     \item CCACLA ar paredzēšanu nākotnē paredz nākamo stāvokli un tā vērtību.
+  %       % $V_t(s_{t-2}) \xleftarrow{\alpha} r_{t-1} + \gamma v_t$
+  %   \end{itemize}
+  %   \begin{center}
+  %     \hspace{2cm} \includegraphics[height=6cm]{ccacla-state.pdf}
+  %   \end{center}
+  % \end{frame}
 % etc
 \end{document}

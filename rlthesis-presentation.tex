@@ -135,7 +135,7 @@
         \begin{itemize}
           \item Pielāgo stratēģijas funkciju
             \begin{equation*}
-              Ac_{t+1}(s_t) \xleftarrow{\beta_t(s_t)} a_t
+              Ac_{t+1}(s_t) \xleftarrow{\beta} a_t
             \end{equation*}
         \end{itemize}
     \end{itemize}
@@ -308,6 +308,33 @@
         \includegraphics[height=5.5cm]{{car.all}.pdf}
         \captionof{figure}{Visu algoritmu vidējie rezultāti}
       \end{centering}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Secinājumi}
+      \begin{itemize}
+        \item Ideja par aģenta iekšēja vides modeļa veidošanu noveda pie:
+          \begin{itemize}
+            \item CACLA aktiera un kritiķa komponenšu apvienošanas
+            \item Idejas par nākamā stāvokļa un tā vērtības paredzēšanu
+          \end{itemize}
+        \item Aktiera un kritiķa apvienošana vienotā neironu tīklā ļauj aktierim
+          mācīties pat tad, kad tiek piegādāta informācija, kas sākotnēji bija
+          derīga tikai kritiķim.
+        \item Šāda netiešā veidā veikta aktiera parametru pielāgošana noved pie
+          trokšņa parametru vērtību izmaiņās.
+        \item Nākamā stāvokļa un tā vērtības paredzēšana ļauj ar šo troksni
+          cīnīties.
+      \end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+    \begin{center}
+    \huge{Paldies par uzmanību!}
+
+    \vspace{0.5cm}
+    \normalsize{Jautājumi?}
+    \end{center}
   \end{frame}
 
 % etc

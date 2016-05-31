@@ -195,6 +195,19 @@
 
   \begin{frame}
     \frametitle{Eksperimenti}
+    \framesubtitle{Aģentu konfigurācija}
+      \begin{itemize}
+        \item CACLA tika izmantoti 20 neironi gan stāvokļu vērtību funkcijas,
+          gan stratēģijas funkcijas neironu tīkla slēptajā slānī.
+        \item CCACLA algoritmos tika izmantoti 20 neironi apvienotā neironu
+          tīkla slēptajā slānī.
+        \item Visi algoritmi tika darbināti ar mācīšanās ātruma parametra
+          vērtību $10^{-5}$ vai atsevišķos gadījumos ar $10^{-4}$.
+      \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Eksperimenti}
     \framesubtitle{Cart-pole rezultāti}
     \begin{columns}[T]
     \begin{column}{.5\textwidth}
@@ -315,8 +328,8 @@
       \begin{itemize}
         \item Ideja par aģenta iekšēja vides modeļa veidošanu noveda pie:
           \begin{itemize}
-            \item CACLA aktiera un kritiķa komponenšu apvienošanas
-            \item Idejas par nākamā stāvokļa un tā vērtības paredzēšanu
+            \item CACLA aktiera un kritiķa komponenšu apvienošanas;
+            \item Idejas par nākamā stāvokļa un tā vērtības paredzēšanu.
           \end{itemize}
         \item Aktiera un kritiķa apvienošana vienotā neironu tīklā ļauj aktierim
           mācīties pat tad, kad tiek piegādāta informācija, kas sākotnēji bija
